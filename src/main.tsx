@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ErrorBoundary, type FallbackProps } from 'react-error-boundary';
-import { Link, Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Link, Outlet, RouterProvider, createHashRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import './index.css';
 import { TimerProvider } from './utils/context';
@@ -82,7 +82,7 @@ const PageIndex = () => {
     );
 };
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: '/',
         element: <PageIndex />,
